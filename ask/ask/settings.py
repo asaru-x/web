@@ -78,8 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'stepik_web',
-        'USER': 'kolsky',
-        'PASSWORD': ''
+        'USER': 'box'
     }
 }
 
