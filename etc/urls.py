@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+#from django.conf.urls import url
 from qa.views import handler
 
 urlpatterns = [
@@ -26,5 +27,16 @@ urlpatterns = [
     re_path(r'^popular/$', handler),
     re_path(r'^ask/$', handler),
     re_path(r'^question/', handler),
-    
 ]
+'''
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', handler),
+    url(r'^login/$', handler),
+    url(r'^signup/$', handler),
+    url(r'^new/$', handler),
+    url(r'^popular/$', handler),
+    url(r'^ask/$', handler),
+    url(r'^question/', handler),
+]
+'''
