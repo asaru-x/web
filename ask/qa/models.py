@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Question(models.Model):
-        title = models.CharField(max_length=64)
-        text = models.TextField()
-        added_at = models.DateTimeField(auto_now_add=True)
-        likes = models.ManyToManyField(User, related_name='likes_question')
-        author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-        rating = models.IntegerField(default=0)
+    title = models.CharField(max_length=64)
+    text = models.TextField()
+    added_at = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name='likes_question')
+    author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    rating = models.IntegerField(default=0)
 
 class Answer(models.Model):
     text = models.TextField()
