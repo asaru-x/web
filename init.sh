@@ -1,3 +1,4 @@
+sudo apt update
 sudo apt install python3.5 -y
 sudo apt install python3.5-dev -y
 sudo unlink /usr/bin/python3
