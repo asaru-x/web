@@ -36,5 +36,5 @@ urlpatterns = [
     url('^popular/$', popular_q, name='popular_questions'),
     url('^login/$', common_handler),
     url('^signup/$', common_handler),
-    url('^question/<str:slug>/$', question_page)
+    url('^question/(?P<slug>\w+)/$', question_page)
 ]
