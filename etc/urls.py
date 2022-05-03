@@ -14,29 +14,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
-#from django.conf.urls import url
-from qa.views import handler
+#from django.urls import path, re_path
+from django.conf.urls import url
+from qa.views import new_q, popular_q, common_handler, question_page
 
+'''
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^$', handler),
-    re_path(r'^login/$', handler),
-    re_path(r'^signup/$', handler),
-    re_path(r'^new/$', handler),
-    re_path(r'^popular/$', handler),
-    re_path(r'^ask/$', handler),
-    re_path(r'^question/', handler),
+    path('', new_q, name='new_questions'),
+    path('new/', new_q, name='new_questions'),
+    path('popular/', popular_q, name='popular_questions'),
+    path('login/', common_handler),
+    path('signup/', common_handler),
+    path('question/<str:slug>/', question_page)
 ]
 '''
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', handler),
-    url(r'^login/$', handler),
-    url(r'^signup/$', handler),
-    url(r'^new/$', handler),
-    url(r'^popular/$', handler),
-    url(r'^ask/$', handler),
-    url(r'^question/', handler),
+    url('^admin/$', admin.site.urls),
+    url('^$', new_q, name='new_questions'),
+    url('^new/$', new_q, name='new_questions'),
+    url('^popular/$', popular_q, name='popular_questions'),
+    url('^login/$', common_handler),
+    url('^signup/$', common_handler),
+    url('^question/<str:slug>/$', question_page)
 ]
-'''

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>{{ question.title }}</h1>
+        <hr>
+        <h2> -- {{ question.author.username }} at {{ question.added_at }}</h2>
+        <hr>
+        <pre>
+            {{ question.text }}
+        </pre>
+        <hr>
+        <hr>
+        {% for answer in answers %}
+            <h3>{{ answer.title }}</h3>
+            <h4> -- {{ answer.author.username }} -- {{ answer.added_at }} </h4>
+            <pre>
+                {{ answer.text }}
+            </pre>
+            <hr>
+        {% endfor %}
+    </body>
+</html>
