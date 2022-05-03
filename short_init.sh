@@ -1,5 +1,5 @@
 sudo cp etc/nginx.conf /etc/nginx/nginx.conf
-sudo /etc/init.d/nginx reload
+sudo /etc/init.d/nginx restart
 sudo /etc/init.d/mysql start
 
 mysql -u root -e "CREATE DATABASE stepik_web;"
